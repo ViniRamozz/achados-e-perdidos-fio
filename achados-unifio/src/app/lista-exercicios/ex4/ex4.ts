@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './ex4.scss',
 })
 export class Ex4 {
-  formularioValido: boolean = false;
+  formularioValido: boolean = true;
 }
