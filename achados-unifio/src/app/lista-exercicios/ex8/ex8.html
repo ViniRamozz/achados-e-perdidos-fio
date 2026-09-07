@@ -1,0 +1,27 @@
+<div>
+  <h2>Cadastro de Produto</h2>
+
+  <div>
+    <label>Produto: </label>
+    <input type="text" [(ngModel)]="produto">
+  </div>
+
+  <div>
+    <label>Preço: </label>
+    <input type="number" [(ngModel)]="preco">
+  </div>
+
+  <div>
+    <label>Quantidade: </label>
+    <input type="number" [(ngModel)]="quantidade">
+  </div>
+
+  <hr>
+
+  <h3>Resumo</h3>
+  <p><strong>Produto:</strong> {{ produto }}</p>
+  <p><strong>Preço:</strong> R$ {{ preco }}</p>
+  <p><strong>Quantidade:</strong> {{ quantidade }}</p>
+  
+  <p><strong>Total:</strong> R$ {{ calcularTotal().toFixed(2) }}</p>
+</div>
