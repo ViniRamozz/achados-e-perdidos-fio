@@ -8,6 +8,8 @@ import { Ex5 } from './ex5/ex5';
 import { Ex6 } from './ex6/ex6';
 import { Ex7 } from './ex7/ex7';
 import { Ex8 } from './ex8/ex8';
+import { Ex9 } from './ex9/ex9';
+import { Ex10 } from './ex10/ex10';
 const routes: Routes = [
      {
     path: 'ex1', component: Ex1
@@ -32,6 +34,12 @@ const routes: Routes = [
   },
   {
     path: 'ex8', component: Ex8
+  },
+   {
+    path: 'ex9', component: Ex9
+  },
+  {
+    path: 'ex10', component: Ex10
   }
 ];
 

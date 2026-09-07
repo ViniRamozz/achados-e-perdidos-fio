@@ -1,0 +1,19 @@
+<div>
+  <h2>Login Simulado</h2>
+
+  <div>
+    <label>Usuário: </label>
+    <input type="text" [(ngModel)]="usuario" placeholder="Digite seu usuário">
+  </div>
+
+  <div>
+    <label>Senha: </label>
+    <input type="password" [(ngModel)]="senha" placeholder="Digite sua senha">
+  </div>
+
+  <button (click)="entrar()" [disabled]="!usuario || !senha">
+    Entrar
+  </button>
+
+  <p><strong>{{ mensagem }}</strong></p>
+</div>
