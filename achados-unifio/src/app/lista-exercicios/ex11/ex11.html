@@ -1,0 +1,16 @@
+<div>
+  <h2>{{ nome }}</h2>
+  <p>Preço: R$ {{ preco }},00</p>
+
+  <p>
+    Quantidade: {{ quantidade }}
+    <button (click)="diminuir()" [disabled]="quantidade === 1">[-]</button>
+    <button (click)="aumentar()">[+]</button>
+  </p>
+
+  <p>Total: R$ {{ total }},00</p>
+
+  <button (click)="adicionar()">Adicionar ao carrinho</button>
+
+  <p *ngIf="mensagem">{{ mensagem }}</p>
+</div>
