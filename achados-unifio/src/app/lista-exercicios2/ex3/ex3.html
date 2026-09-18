@@ -1,0 +1,14 @@
+<button (click)="aumentarIdade()">+</button>
+<button (click)="diminuirIdade()">-</button>
+<p>Idade: {{ idade }}</p>
+
+@if (idade < 12) {
+  <p>Criança</p>
+} @else if (idade < 18) {
+  <p>Adolescente</p>
+} @else if (idade < 60) {
+  <p>Adulto</p>
+} @else {
+  <p>Idoso</p>
+}
+
