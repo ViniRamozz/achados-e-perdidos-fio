@@ -1,0 +1,13 @@
+<button (click)="removerUltimo()">Remover último</button>
+<button (click)="limparLista()">Limpar lista</button>
+<button (click)="restaurarLista()">Restaurar lista</button>
+
+<p>Total de nomes: {{ nomes.length }}</p>
+
+<ul>
+  @for (nome of nomes; track $index) {
+    <li>{{ nome }}</li>
+  } @empty {
+    <p>Nenhum nome cadastrado</p>
+  }
+</ul>

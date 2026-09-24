@@ -1,0 +1,7 @@
+<ul>
+  @for (produto of produtos; track produto.id; let i = $index) {
+    <li>
+      Posição: {{ i + 1 }} | Nome: {{ produto.nome }} | Preço: {{ produto.preco | currency:'BRL' }} | Quantidade: {{ produto.quantidade }} | Total: {{ produto.preco * produto.quantidade | currency:'BRL' }}
+    </li>
+  }
+</ul>

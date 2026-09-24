@@ -1,0 +1,14 @@
+<div>
+  <input type="text" [(ngModel)]="nomeInput" placeholder="Nome do produto" />
+  <input type="number" [(ngModel)]="quantidadeInput" placeholder="Quantidade" />
+  <button (click)="cadastrar()">Cadastrar</button>
+</div>
+
+<p *ngIf="mensagemErro" style="color: red;">{{ mensagemErro }}</p>
+
+<ul>
+  <li *ngFor="let produto of produtos">
+    {{ produto.nome }} - Qtd: {{ produto.quantidade }}
+    <button (click)="excluir(produto.id)">Excluir</button>
+  </li>
+</ul>

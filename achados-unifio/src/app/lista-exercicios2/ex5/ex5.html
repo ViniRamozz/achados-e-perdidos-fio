@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let nome of nomes; let i = index; let first = first; let last = last">
+    {{ i + 1 }} - {{ nome }}
+    <span *ngIf="first"> (Primeiro da lista)</span>
+    <span *ngIf="last"> (Último da lista)</span>
+  </li>
+</ul>

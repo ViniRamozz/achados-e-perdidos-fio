@@ -1,0 +1,11 @@
+<button (click)="alternarFiltro()">
+  {{ somenteDisponiveis ? 'Exibir Todos' : 'Exibir Somente Disponíveis' }}
+</button>
+
+<ul>
+  <ng-container *ngFor="let produto of produtos">
+    <li *ngIf="!somenteDisponiveis || produto.quantidade > 0">
+      {{ produto.nome }} - Quantidade: {{ produto.quantidade }}
+    </li>
+  </ng-container>
+</ul>
