@@ -1,0 +1,29 @@
+<h2>Gerenciamento de Nomes</h2>
+
+<div class="acoes">
+  <button (click)="removerUltimo()" [disabled]="nomes.length === 0">
+    Remover Último
+  </button>
+  <button (click)="limparLista()" [disabled]="nomes.length === 0">
+    Limpar Lista
+  </button>
+  <button (click)="restaurarLista()">
+    Restaurar Lista Inicial
+  </button>
+</div>
+
+<hr />
+
+<p><strong>Total de nomes cadastrados:</strong> {{ nomes.length }}</p>
+
+<!-- Renderização Condicional com *ngIf -->
+<ng-container *ngIf="nomes.length > 0; else listaVazia">
+  <ul>
+
+    <li *ngFor="let nome of nomes">{{ nome }}</li>
+  </ul>
+</ng-container>
+
+<ng-template #listaVazia>
+  <p class="mensagem-vazia">Nenhum nome cadastrado</p>
+</ng-template>

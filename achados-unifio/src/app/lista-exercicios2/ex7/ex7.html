@@ -1,0 +1,14 @@
+<h2>Disciplinas do Curso</h2>
+
+<ul class="lista-disciplinas">
+  @for (disciplina of disciplinas; track disciplina; let isEven = $even; let isOdd = $odd; let isFirst = $first; let isLast = $last) {
+    <li [ngClass]="{
+      'par': isEven,
+      'impar': isOdd,
+      'destaque-primeiro': isFirst,
+      'borda-ultimo': isLast
+    }">
+      {{ disciplina }}
+    </li>
+  }
+</ul>
