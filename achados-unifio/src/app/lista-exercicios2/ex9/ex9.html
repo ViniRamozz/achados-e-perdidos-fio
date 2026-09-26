@@ -1,0 +1,39 @@
+<table>
+  <thead>
+    <tr>
+      <th>Posição</th>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+      <th>Total em Estoque</th>
+      <th>Status do Estoque</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos; let i = index">
+      <td>{{ i + 1 }}</td>
+      
+      <td>{{ produto.nome }}</td>
+      
+      <td>{{ produto.preco | currency:'BRL' }}</td>
+      
+      <td>{{ produto.quantidade }}</td>
+      
+      <td>{{ (produto.preco * produto.quantidade) | currency:'BRL' }}</td>
+      
+      <td [ngClass]="{
+        'sem-estoque': produto.quantidade === 0,
+        'estoque-baixo': produto.quantidade >= 1 && produto.quantidade <= 5,
+        'estoque-disponivel': produto.quantidade > 5
+      }">
+        @if (produto.quantidade === 0) {
+          Sem estoque
+        } @else if (produto.quantidade >= 1 && produto.quantidade <= 5) {
+          Estoque baixo
+        } @else {
+          Estoque disponível
+        }
+      </td>
+    </tr>
+  </tbody>
+</table>
