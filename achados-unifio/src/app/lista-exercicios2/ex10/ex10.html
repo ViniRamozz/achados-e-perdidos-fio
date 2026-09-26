@@ -1,0 +1,50 @@
+<table>
+  <thead>
+    <tr>
+      <th>Posição</th>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+      <th>Total em Estoque</th>
+      <th>Status da Promoção</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos; let i = index">
+      <td>{{ i + 1 }}</td>
+      
+      <td [style.font-weight]="produto.promocao ? 'bold' : 'normal'">
+        {{ produto.nome }}
+      </td>
+      
+      <td [ngStyle]="{
+        'color': produto.promocao ? '#d9534f' : 'inherit',
+        'font-weight': produto.promocao ? 'bold' : 'normal'
+      }">
+        {{ produto.preco | currency:'BRL' }}
+        @if (produto.promocao) {
+          <span class="tag-promo">(Promo)</span>
+        }
+      </td>
+      
+      <td>{{ produto.quantidade }}</td>
+      
+      <td>{{ (produto.preco * produto.quantidade) | currency:'BRL' }}</td>
+      
+      <td>
+        @if (produto.promocao) {
+          <span class="texto-promocao">Produto em promoção</span>
+        } @else {
+          <span class="texto-normal">Preço normal</span>
+        }
+      </td>
+
+      <td>
+        <button (click)="alternarPromocao(produto)">
+          {{ produto.promocao ? 'Remover Promoção' : 'Ativar Promoção' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

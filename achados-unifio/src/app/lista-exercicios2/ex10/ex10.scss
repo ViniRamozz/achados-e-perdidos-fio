@@ -1,0 +1,47 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    background-color: #f4f4f4;
+  }
+}
+
+.texto-promocao {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.texto-normal {
+  color: #7f8c8d;
+}
+
+.tag-promo {
+  font-size: 0.8em;
+  background-color: #ffeaa7;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 5px;
+  color: #d35400;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+}
